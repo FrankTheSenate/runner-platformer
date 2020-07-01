@@ -26,6 +26,7 @@
     <object>objects\obj_grapplehead</object>
     <object>objects\obj_grapplesurface</object>
     <object>objects\obj_persistent</object>
+    <object>objects\obj_cursor</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
