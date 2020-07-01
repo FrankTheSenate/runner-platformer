@@ -13,6 +13,7 @@
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_grapplehead</sprite>
     <sprite>sprites\spr_grapplesurface</sprite>
+    <sprite>sprites\spr_target</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

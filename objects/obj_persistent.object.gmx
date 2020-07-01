@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>//Antialiasing + Vsync
 display_reset(8, true)
+cursor_sprite = spr_target
+window_set_cursor(cr_none)
 </string>
           </argument>
         </arguments>
