@@ -13,7 +13,11 @@
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_grapplehead</sprite>
     <sprite>sprites\spr_grapplesurface</sprite>
-    <sprite>sprites\spr_target</sprite>
+    <sprites name="Mouse Sprites">
+      <sprite>sprites\spr_target_attack</sprite>
+      <sprite>sprites\spr_target_grab</sprite>
+      <sprite>sprites\spr_target_idle</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
