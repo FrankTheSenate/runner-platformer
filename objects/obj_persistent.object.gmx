@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>display_reset(8, true)
+            <string>//Antialiasing + Vsync
+display_reset(8, true)
 </string>
           </argument>
         </arguments>
@@ -48,7 +49,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(obj_Enemy)
+            <string>//Check if there are any enemies left
+if !instance_exists(obj_Enemy)
 {
 room_restart()
 }

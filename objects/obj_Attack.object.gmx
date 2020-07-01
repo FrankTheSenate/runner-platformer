@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = obj_CubeBoi.x
+            <string>//Spawn on character and in the right direction
+x = obj_CubeBoi.x
 y= obj_CubeBoi.y
 image_angle = point_direction(x, y, mouse_x, mouse_y)
 alarm[0] = 3
@@ -67,7 +68,8 @@ alarm[0] = 3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = obj_CubeBoi.x
+            <string>//Stay on character and move with mouse
+x = obj_CubeBoi.x
 y= obj_CubeBoi.y
 image_angle = point_direction(x, y, mouse_x, mouse_y)
 </string>

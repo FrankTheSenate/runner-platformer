@@ -68,7 +68,8 @@ grounded = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>move_lock = false
+            <string>//Used for wall jumping
+move_lock = false
 </string>
           </argument>
         </arguments>
@@ -139,6 +140,7 @@ else
 {
     grounded = false
 }
+
 //WallJumping
 if (lkey) and place_meeting(x + 10, y, obj_Ground) and grounded = false
 {

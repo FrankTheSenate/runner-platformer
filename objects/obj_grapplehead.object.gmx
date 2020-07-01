@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>motion_set(point_direction(x, y, mouse_x, mouse_y), 30)
+            <string>//Move to right point and point in right direction
+motion_set(point_direction(x, y, mouse_x, mouse_y), 30)
 image_angle = point_direction(x, y, mouse_x, mouse_y)
 depth = -10000
 </string>
@@ -57,7 +58,7 @@ if place_meeting(x,y,obj_grapplesurface)
     hspeed = 0
 }
 
-//Can we create more segments?
+//Is the grapple touching?
 if place_meeting(x,y,obj_grapplesurface)
 {
 global.grapple = 1
