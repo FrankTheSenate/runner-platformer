@@ -46,6 +46,7 @@ xcomponent = 0
 ycomponent = 0
 move_lock = false
 grounded = false
+time = 1
 </string>
           </argument>
         </arguments>
@@ -288,6 +289,23 @@ if global.grapple = 0
     xcomponent = 0
     ycomponent = 0
 }
+
+//Slow Down Time Toggle
+if keyboard_check_pressed(ord("Q"))
+{
+    if time = 1
+    {
+        room_speed = 30
+        time = 0
+    }
+    
+    else if time = 0
+    {
+        room_speed = 10
+        time = 1
+    }
+}
+
 
 
 </string>
