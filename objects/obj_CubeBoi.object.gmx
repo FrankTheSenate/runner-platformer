@@ -31,7 +31,7 @@ acceleration = 0.4
 deceleration = 2
 grav = 0.01
 jspd = 20
-maxvelocity = 16
+maxvelocity = 25
 hspd = 0
 vspd = 0
 h_collision = 0
@@ -311,6 +311,22 @@ if place_meeting(x,y+vspd,obj_Ground)
         }
         vspd = 0
 }
+
+    if hspd &gt; maxvelocity and hspd &gt; 0
+    {
+        acceleration = 0
+        hspd -= 1
+    }
+    else if hspd &lt; -maxvelocity and hspd &lt; 0
+    {
+        acceleration = 0
+        hspd += 1
+    }
+    
+    else
+    {
+        acceleration = 0.4
+    }
 
 
 
