@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>depth = -9999999
+scr_mouse_states()
+
+state = mouse_state.idle
 </string>
           </argument>
         </arguments>
@@ -52,17 +55,32 @@
 y = mouse_y
 
 //Dynamic Mouse Sprite
-if place_meeting(x,y, obj_Enemy)
+
+
+switch (state)
 {
-    sprite_index = spr_target_attack
+    case mouse_state.idle:
+    {
+        sprite_index = spr_target_idle
+    }
+    break
+    
+    case mouse_state.grab:
+    {
+        sprite_index = spr_target_grab
+    }
+    break
+    
+    case mouse_state.attack:
+    {
+        sprite_index = spr_target_attack
+    }
+    break
 }
-else if place_meeting(x,y+1, obj_grapplesurface)
+
+if place_free(x,y)
 {
-    sprite_index = spr_target_grab
-}
-else
-{
-    sprite_index = spr_target_idle
+    state = mouse_state.idle
 }
 </string>
           </argument>

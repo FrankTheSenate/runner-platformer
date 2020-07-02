@@ -143,26 +143,8 @@ else
 }
 
 //WallJumping
-if (lkey) and place_meeting(x + 20, y, obj_Ground) and grounded = false
-{
-    if jkey and !rkey
-    {
-        jumps = 1
-        vspd = 0
-    }
-}
-
-
-if (rkey) and place_meeting(x - 20, y, obj_Ground) and grounded = false
-{
-    if jkey and !lkey
-    {
-        jumps = 1
-        vspd = 0
-    }
-}
-
-if (jkey) and place_meeting(x - 20, y, obj_Ground) and grounded = false
+/* This is an attempt to get holding space bar before pressing directional buttons to work, but sadly as is it does nothing
+if (jkey) and place_meeting(x + 10, y, obj_Ground) and grounded = false
 {
     if rkey and !lkey
     {
@@ -175,6 +157,42 @@ if (jkey) and place_meeting(x - 20, y, obj_Ground) and grounded = false
         vspd = 0
     }
 }
+
+if (jkey) and place_meeting(x - 10, y, obj_Ground) and grounded = false
+{
+    if rkey and !lkey
+    {
+        jumps = 1
+        vspd = 0
+    }
+    else if lkey and !rkey
+    {
+        jumps = 1
+        vspd = 0
+    }
+}
+*/
+//Left WallJump
+if (lkey) and place_meeting(x + 10, y, obj_Ground) and grounded = false
+{
+    if jkey and !rkey
+    {
+        jumps = 1
+        vspd = 0
+    }
+}
+//Right Walljump
+if (rkey) and place_meeting(x - 10, y, obj_Ground) and grounded = false
+{
+    if jkey and !lkey
+    {
+        jumps = 1
+        vspd = 0
+    }
+}
+
+
+
 
 
 //No Movement (slowing down)

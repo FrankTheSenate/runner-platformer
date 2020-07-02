@@ -25,6 +25,7 @@
   <scripts name="scripts">
     <script>scripts\spr_AIenemy_states.gml</script>
     <script>scripts\script1.gml</script>
+    <script>scripts\scr_mouse_states.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_CubeBoi</object>
