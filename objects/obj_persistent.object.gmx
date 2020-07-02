@@ -58,6 +58,11 @@ room_restart()
 }
 
 
+if obj_CubeBoi.time = 0
+{
+    room_speed = 60
+}
+
 </string>
           </argument>
         </arguments>

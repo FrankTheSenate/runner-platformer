@@ -47,6 +47,62 @@ ycomponent = 0
 move_lock = false
 grounded = false
 time = 0
+alarm[4] = 0
+alarm[3] = 0
+alarm[2] = 0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if hspd &lt;= -30 and hspd &lt; 0
+{
+    hspd += 30
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if hspd &gt;= 30 and hspd &gt; 0
+{
+    hspd -= 30
+}
+
 </string>
           </argument>
         </arguments>
@@ -95,8 +151,12 @@ time = 0
             <kind>1</kind>
             <string>///Movement
 //Define Controls
+upkey = keyboard_check(ord('W'))
+upkeytapped = keyboard_check_pressed(ord('W'))
 lkey = keyboard_check(ord('A'))
+lkeytapped = keyboard_check_pressed(ord('A'))
 rkey = keyboard_check(ord('D'))
+rkeytapped = keyboard_check_pressed(ord('D'))
 jkey = keyboard_check_pressed(vk_space)
 jkey_held = keyboard_check(vk_space)
 dkey = keyboard_check(ord('S'))
@@ -340,9 +400,41 @@ if keyboard_check_pressed(ord("Q"))
     }
 }
 
+//Dashing
 
+//Dashing Right
+if alarm[4] = 0
+{
+    if rkeytapped
+    {
+        if rkeytapped and alarm[2] &gt; 0
+        {
+            hspd = 30
+            alarm[4] = 30
+        }
+        alarm[2] = 20
 
+    }
+}
+//Dashing Left
+if alarm[4] = 0
+{
+    if lkeytapped
+    {
+        if lkeytapped and alarm[3] &gt; 0
+        {
+            hspd = -30
+            alarm[4] = 30
+        }
+        alarm[3] = 20
 
+    }
+}
+
+if alarm [4] &gt;0
+{
+    alarm [4] -= 1
+}
 </string>
           </argument>
         </arguments>
