@@ -19,6 +19,7 @@
       <sprite>sprites\spr_target_idle</sprite>
     </sprites>
     <sprite>sprites\spr_AIenemy</sprite>
+    <sprite>sprites\spr_spike</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -38,6 +39,7 @@
     <object>objects\obj_persistent</object>
     <object>objects\obj_cursor</object>
     <object>objects\obj_AIenemy</object>
+    <object>objects\obj_spike</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
