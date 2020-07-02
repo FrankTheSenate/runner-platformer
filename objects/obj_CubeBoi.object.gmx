@@ -312,22 +312,26 @@ if place_meeting(x,y+vspd,obj_Ground)
         vspd = 0
 }
 
-    if hspd &gt; maxvelocity and hspd &gt; 0
-    {
-        acceleration = 0
-        hspd -= 1
-    }
-    else if hspd &lt; -maxvelocity and hspd &lt; 0
-    {
-        acceleration = 0
-        hspd += 1
-    }
-    
-    else
-    {
-        acceleration = 0.4
-    }
 
+//Speed limit
+
+if alarm[2] = -1 and alarm [3] = -1
+{
+    if hspd &gt; maxvelocity and hspd &gt; 0
+        {
+            acceleration = 0
+            hspd -= 1
+        }
+    else if hspd &lt; -maxvelocity and hspd &lt; 0
+        {
+            acceleration = 0
+            hspd += 1
+        }
+    else
+        {
+            acceleration = 0.4
+        }
+}
 
 
 hspd += xcomponent
