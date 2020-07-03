@@ -5,4 +5,3 @@ enum mouse_state
     attack
 }
 
-

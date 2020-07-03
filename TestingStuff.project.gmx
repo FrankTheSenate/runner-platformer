@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_CubeBoi</sprite>
+    <sprite>sprites\spr_light</sprite>
     <sprite>sprites\spr_Ground</sprite>
     <sprite>sprites\spr_Attack</sprite>
     <sprite>sprites\spr_Enemy</sprite>
@@ -20,6 +21,7 @@
     </sprites>
     <sprite>sprites\spr_AIenemy</sprite>
     <sprite>sprites\spr_spike</sprite>
+    <sprite>sprites\spr_lightsource</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -27,6 +29,7 @@
     <script>scripts\spr_AIenemy_states.gml</script>
     <script>scripts\script1.gml</script>
     <script>scripts\scr_mouse_states.gml</script>
+    <script>scripts\scr_lighting.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_CubeBoi</object>
@@ -40,6 +43,7 @@
     <object>objects\obj_cursor</object>
     <object>objects\obj_AIenemy</object>
     <object>objects\obj_spike</object>
+    <object>objects\obj_lightsource</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
