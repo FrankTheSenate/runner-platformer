@@ -30,6 +30,7 @@
     <script>scripts\script1.gml</script>
     <script>scripts\scr_mouse_states.gml</script>
     <script>scripts\scr_lighting.gml</script>
+    <script>scripts\scr_flyenemy_states.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_CubeBoi</object>
@@ -44,6 +45,8 @@
     <object>objects\obj_AIenemy</object>
     <object>objects\obj_spike</object>
     <object>objects\obj_lightsource</object>
+    <object>objects\obj_flyenemy</object>
+    <object>objects\obj_enemy_bullet</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
