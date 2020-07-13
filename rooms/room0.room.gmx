@@ -180,6 +180,7 @@
     <instance objName="obj_lightsource" x="976" y="240" name="inst_27D106E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lightsource" x="992" y="240" name="inst_A3D78AEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flyenemy" x="704" y="432" name="inst_2DA3FFF6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_endroom" x="3984" y="608" name="inst_724CA362" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

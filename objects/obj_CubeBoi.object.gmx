@@ -29,7 +29,7 @@
 //Physics
 acceleration = 0.4
 deceleration = 2
-grav = 0.01
+grav = 0.75
 jspd = 20
 maxvelocity = 25
 hspd = 0
@@ -46,6 +46,7 @@ xcomponent = 0
 ycomponent = 0
 move_lock = false
 grounded = false
+dashing = false
 time = 0
 alarm[4] = 0
 alarm[3] = 0
@@ -76,6 +77,8 @@ alarm[2] = 0
 {
     hspd += 30
 }
+grav = 0.01
+dashing = false
 </string>
           </argument>
         </arguments>
@@ -102,6 +105,8 @@ alarm[2] = 0
 {
     hspd -= 30
 }
+grav = 0.01
+dashing = false
 
 </string>
           </argument>
@@ -160,6 +165,7 @@ rkeytapped = keyboard_check_pressed(ord('D'))
 jkey = keyboard_check_pressed(vk_space)
 jkey_held = keyboard_check(vk_space)
 dkey = keyboard_check(ord('S'))
+
 
 //Movement Left
 if lkey
@@ -276,15 +282,17 @@ if place_meeting(x,y+1, obj_Ground)
 {
     jumps = 1
 }
-
-if jkey and jumps &gt; 0
+if dashing = false
 {
-    vspd = 0
-    vspd -= jspd
-    jumps -=1
+    if jkey and jumps &gt; 0
+    {
+        vspd = 0
+        vspd -= jspd
+        jumps -=1
+    }
 }
 
-if vspd &lt; 0 and !jkey_held vspd = max(vspd, -jspd/2)
+if vspd &lt; 0 and !jkey_held vspd += grav
 
 //Groundslam
 if dkey
@@ -298,8 +306,21 @@ if dkey
         }
     }
 }
+else
+{
+grav = 0.75
+}
 
 //Gravity
+if dashing = true
+{
+grav = 0
+vspd = 0
+}
+else
+{
+grav = 0.75
+}
 vspd += grav
 
 //Vertical Collisions
@@ -431,8 +452,10 @@ if alarm[4] = 0
         {
             hspd = 30
             alarm[4] = 30
+            grav = 0
+            dashing = true
         }
-        alarm[2] = 20
+        alarm[2] = 15
 
     }
 }
@@ -445,8 +468,10 @@ if alarm[4] = 0
         {
             hspd = -30
             alarm[4] = 30
+            grav = 0
+            dashing = true
         }
-        alarm[3] = 20
+        alarm[3] = 15
 
     }
 }
@@ -458,22 +483,6 @@ if alarm [4] &gt;0
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>223</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_current_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>

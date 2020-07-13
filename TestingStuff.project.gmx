@@ -22,6 +22,7 @@
     <sprite>sprites\spr_AIenemy</sprite>
     <sprite>sprites\spr_spike</sprite>
     <sprite>sprites\spr_lightsource</sprite>
+    <sprite>sprites\spr_bigend</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -47,10 +48,11 @@
     <object>objects\obj_lightsource</object>
     <object>objects\obj_flyenemy</object>
     <object>objects\obj_enemy_bullet</object>
+    <object>objects\obj_endroom</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
-    <room>rooms\Controls_Room</room>
+    <room>rooms\room2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

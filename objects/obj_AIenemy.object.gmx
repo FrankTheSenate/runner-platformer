@@ -125,7 +125,7 @@ else
 //Horizontal collisions
 if place_meeting(x+hspd,y,obj_Ground) 
 {
-        while !place_meeting(x+sign(hspd),y,obj_Ground) 
+        if !place_meeting(x+sign(hspd),y,obj_Ground) 
         {
                  x += sign(hspd)
         }
@@ -138,7 +138,7 @@ vspd += grav
 //Vertical Collisions
 if place_meeting(x,y+vspd,obj_Ground) 
 {
-        while !place_meeting(x,y+sign(vspd),obj_Ground) 
+        if !place_meeting(x,y+sign(vspd),obj_Ground) 
         {
                  y += sign(vspd)
         }
