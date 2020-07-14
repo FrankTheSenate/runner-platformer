@@ -23,6 +23,7 @@
     <sprite>sprites\spr_spike</sprite>
     <sprite>sprites\spr_lightsource</sprite>
     <sprite>sprites\spr_bigend</sprite>
+    <sprite>sprites\spr_enemybullet</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
