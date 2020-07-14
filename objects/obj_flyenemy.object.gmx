@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>randomize()
-spr_AIenemy_states();
+            <string>spr_AIenemy_states();
 
 state = scr_flyenemy_states
 

@@ -32,6 +32,8 @@ instance_create(x,y,obj_cursor)
 //Lighting
 global.light=surface_create(view_wview[0],view_hview[0])
 depth = -999999
+//Randomize game
+randomize()
 </string>
           </argument>
         </arguments>

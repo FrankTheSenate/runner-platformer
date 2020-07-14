@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = -9999999
+            <string>//Make sure mouse is always on top
+depth = -9999999
+//Set up mouse states
 scr_mouse_states()
-
 state = mouse_state.idle
 </string>
           </argument>
