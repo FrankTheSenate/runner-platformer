@@ -98,6 +98,7 @@
     <instance objName="obj_AIenemy" x="3968" y="304" name="inst_091AD21A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flyenemy" x="1744" y="384" name="inst_11AF51EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flyenemy" x="3120" y="224" name="inst_1BC97D7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Ground" x="3184" y="336" name="inst_96F296CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
