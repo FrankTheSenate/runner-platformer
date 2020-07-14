@@ -33,8 +33,6 @@ if obj_CubeBoi.grounded = false
 {
     obj_CubeBoi.xcomponent -= lengthdir_x(5, point_direction(x, y, mouse_x , mouse_y ))
     obj_CubeBoi.ycomponent -= lengthdir_y(5, point_direction(x, y, mouse_x , mouse_y ))
-    vspd = 0
-    hspd = 0
 }
 </string>
           </argument>

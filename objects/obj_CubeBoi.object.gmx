@@ -283,10 +283,6 @@ if (rkey) and place_meeting(x - 10, y, obj_Ground) and grounded = false
     }
 }
 
-
-
-
-
 //No Movement (slowing down)
 if (!lkey and !rkey) or (lkey and rkey)
 {
@@ -436,7 +432,7 @@ if mouse_check_button_pressed(mb_right) and canshoot = true
         instance_create(obj_CubeBoi.x, obj_CubeBoi.y, obj_bullet)
     }
     canshoot = false
-    alarm[5] = 30
+    alarm[5] = 45
 }
 
 //Grapple (Should probably be under movement but movement is really cluttered and I'm afraid if I touch it it'll explode into pieces)
