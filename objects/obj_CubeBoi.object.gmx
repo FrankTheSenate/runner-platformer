@@ -29,8 +29,8 @@
 //Physics
 acceleration = 0.4
 deceleration = 2
-grav = 0.75
-jspd = 20
+grav = 0.25
+jspd = 15
 maxvelocity = 25
 hspd = 0
 vspd = 0
