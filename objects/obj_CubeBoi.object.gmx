@@ -31,7 +31,8 @@ acceleration = 0.4
 deceleration = 2
 grav = 0.5
 jspd = 15
-maxvelocity = 15
+maxhvelocity = 15
+maxvvelocity = 20
 hspd = 0
 vspd = 0
 h_collision = 0
@@ -51,6 +52,7 @@ time = 0
 alarm[4] = 0
 alarm[3] = 0
 alarm[2] = 0
+shotgun_pellet_amount = 5
 </string>
           </argument>
         </arguments>
@@ -316,17 +318,28 @@ if place_meeting(x,y+vspd,obj_Ground)
         vspd = 0
 }
 
+//Diagonal Collisions
+if place_meeting(x+hspd,y+vspd,obj_Ground) 
+{
+    while !place_meeting(x+sign(hspd),y+sign(vspd),obj_Ground) 
+        {
+                 y += sign(vspd)
+                 x += sign(hspd)
+        }
+        vspd = 0
+        hspd = 0
+}
 
-//Speed limit
+//Horizontal Speed limit
 
 if alarm[2] = -1 and alarm [3] = -1
 {
-    if hspd &gt; maxvelocity and hspd &gt; 0
+    if hspd &gt; maxhvelocity and hspd &gt; 0
         {
             acceleration = 0
             hspd -= 1
         }
-    else if hspd &lt; -maxvelocity and hspd &lt; 0
+    else if hspd &lt; -maxhvelocity and hspd &lt; 0
         {
             acceleration = 0
             hspd += 1
@@ -338,12 +351,26 @@ if alarm[2] = -1 and alarm [3] = -1
 }
 
 
+
 hspd += xcomponent
 vspd += ycomponent
+
+//Vertical Speed Limit
+if abs(vspd) &gt; maxvvelocity
+{
+        if vspd &lt; -maxvvelocity and vspd &lt; 0
+        {
+            vspd += 1
+        }
+}
 
 x += hspd
 y += vspd
 
+
+//Reset components
+xcomponent = 0
+ycomponent = 0
 
 
 </string>
@@ -372,10 +399,14 @@ if mouse_check_button_pressed(mb_left)
 {
 instance_create(obj_CubeBoi.x, obj_CubeBoi.y, obj_Attack)
 }
-//Gun
+//ShotGun
 if mouse_check_button_pressed(mb_right)
 {
-instance_create(obj_CubeBoi.x, obj_CubeBoi.y, obj_bullet)
+    var i
+    for (i = 0; i &lt;= shotgun_pellet_amount; i += 1)
+    {
+    instance_create(obj_CubeBoi.x, obj_CubeBoi.y, obj_bullet)
+    }
 }
 
 //Grapple (Should probably be under movement but movement is really cluttered and I'm afraid if I touch it it'll explode into pieces)
@@ -390,15 +421,15 @@ if instance_exists(obj_grapplehead)
         {
             grav = 0
             motion_set(point_direction(x, y, obj_grapplehead.x, obj_grapplehead.y), grapple_speed)
-            xcomponent = lengthdir_x(grapple_speed, point_direction(x, y, obj_grapplehead.x, obj_grapplehead.y))
-            ycomponent = lengthdir_y(grapple_speed, point_direction(x, y, obj_grapplehead.x, obj_grapplehead.y))
+            xcomponent += lengthdir_x(grapple_speed, point_direction(x, y, obj_grapplehead.x, obj_grapplehead.y))
+            ycomponent += lengthdir_y(grapple_speed, point_direction(x, y, obj_grapplehead.x, obj_grapplehead.y))
             hspd = 0
             vspd = 0
 
         }
     }
     
-if global.grapple = 0
+if global.grapple = 0 and !instance_exists(obj_bullet)
 {
     motion_set(point_direction(x, y, x, y), 0)
     grav = 0.5

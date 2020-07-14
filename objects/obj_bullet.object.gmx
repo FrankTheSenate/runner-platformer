@@ -25,7 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>motion_set(point_direction(x, y, mouse_x, mouse_y), 30)
+            <string>angle = random_range(-30, 30)
+//Give random angle to shots
+motion_set(point_direction(x, y, mouse_x + angle, mouse_y + angle), 30)
+//Give velocity to player after shot
+if obj_CubeBoi.grounded = false
+{
+    obj_CubeBoi.xcomponent -= lengthdir_x(5, point_direction(x, y, mouse_x , mouse_y ))
+    obj_CubeBoi.ycomponent -= lengthdir_y(5, point_direction(x, y, mouse_x , mouse_y ))
+    vspd = 0
+    hspd = 0
+}
 </string>
           </argument>
         </arguments>
