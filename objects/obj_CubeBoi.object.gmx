@@ -77,7 +77,7 @@ alarm[2] = 0
 {
     hspd += 30
 }
-grav = 0.01
+grav = 0.25
 dashing = false
 </string>
           </argument>
@@ -105,7 +105,7 @@ dashing = false
 {
     hspd -= 30
 }
-grav = 0.01
+grav = 0.25
 dashing = false
 
 </string>
@@ -308,7 +308,7 @@ if dkey
 }
 else
 {
-grav = 0.75
+grav = 0.25
 }
 
 //Gravity
@@ -319,7 +319,7 @@ vspd = 0
 }
 else
 {
-grav = 0.75
+grav = 0.25
 }
 vspd += grav
 
