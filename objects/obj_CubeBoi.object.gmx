@@ -29,7 +29,7 @@
 //Physics
 acceleration = 0.4
 deceleration = 2
-grav = 0.25
+grav = 0.5
 jspd = 15
 maxvelocity = 15
 hspd = 0
@@ -77,7 +77,7 @@ alarm[2] = 0
 {
     hspd += 30
 }
-grav = 0.25
+grav = 0.5
 dashing = false
 </string>
           </argument>
@@ -105,7 +105,7 @@ dashing = false
 {
     hspd -= 30
 }
-grav = 0.25
+grav = 0.5
 dashing = false
 
 </string>
@@ -308,7 +308,7 @@ if dkey
 }
 else
 {
-grav = 0.25
+grav = 0.5
 }
 
 //Gravity
@@ -319,7 +319,7 @@ vspd = 0
 }
 else
 {
-grav = 0.25
+grav = 0.5
 }
 vspd += grav
 
@@ -418,7 +418,7 @@ if instance_exists(obj_grapplehead)
 if global.grapple = 0
 {
     motion_set(point_direction(x, y, x, y), 0)
-    grav = 1
+    grav = 0.5
     xcomponent = 0
     ycomponent = 0
 }
