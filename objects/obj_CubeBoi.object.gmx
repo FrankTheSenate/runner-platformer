@@ -293,15 +293,7 @@ if (!lkey and !rkey) or (lkey and rkey)
     hspd -= min(abs(hspd), deceleration) * sign(hspd)
 }
         
-//Horizontal collisions
-if place_meeting(x+hspd,y,obj_Ground) 
-{
-        while !place_meeting(x+sign(hspd),y,obj_Ground) 
-        {
-                 x += sign(hspd)
-        }
-        hspd = 0
-}
+
 
 //Jumping
 if place_meeting(x,y+1, obj_Ground)
@@ -342,6 +334,23 @@ if place_meeting(x,y+vspd,obj_Ground)
         vspd = 0
 }
 
+
+
+
+
+hspd += xcomponent
+vspd += ycomponent
+
+//Horizontal collisions
+if place_meeting(x+hspd,y,obj_Ground) 
+{
+        while !place_meeting(x+sign(hspd),y,obj_Ground) 
+        {
+                 x += sign(hspd)
+        }
+        hspd = 0
+}
+
 //Diagonal Collisions
 if place_meeting(x+hspd,y+vspd,obj_Ground) 
 {
@@ -373,11 +382,6 @@ if alarm[2] = -1 and alarm [3] = -1
             acceleration = 0.4
         }
 }
-
-
-
-hspd += xcomponent
-vspd += ycomponent
 
 //Vertical Speed Limit
 if abs(vspd) &gt; maxvvelocity
