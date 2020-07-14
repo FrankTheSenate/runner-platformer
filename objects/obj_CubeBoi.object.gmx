@@ -53,6 +53,30 @@ alarm[4] = 0
 alarm[3] = 0
 alarm[2] = 0
 shotgun_pellet_amount = 5
+canshoot = true
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>canshoot = true
 </string>
           </argument>
         </arguments>
@@ -400,13 +424,15 @@ if mouse_check_button_pressed(mb_left)
 instance_create(obj_CubeBoi.x, obj_CubeBoi.y, obj_Attack)
 }
 //ShotGun
-if mouse_check_button_pressed(mb_right)
+if mouse_check_button_pressed(mb_right) and canshoot = true
 {
     var i
     for (i = 0; i &lt;= shotgun_pellet_amount; i += 1)
     {
-    instance_create(obj_CubeBoi.x, obj_CubeBoi.y, obj_bullet)
+        instance_create(obj_CubeBoi.x, obj_CubeBoi.y, obj_bullet)
     }
+    canshoot = false
+    alarm[5] = 30
 }
 
 //Grapple (Should probably be under movement but movement is really cluttered and I'm afraid if I touch it it'll explode into pieces)
