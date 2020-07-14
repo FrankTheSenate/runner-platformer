@@ -294,23 +294,6 @@ if dashing = false
 
 if vspd &lt; 0 and !jkey_held vspd += grav
 
-//Groundslam
-if dkey
-{
-    grav =  8
-    if place_meeting(x,y,obj_Enemy)
-    {
-        with(instance_nearest(x,y, obj_Enemy))
-        {
-            instance_destroy()
-        }
-    }
-}
-else
-{
-grav = 0.5
-}
-
 //Gravity
 if dashing = true
 {
