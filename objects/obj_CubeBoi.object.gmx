@@ -38,7 +38,7 @@ vspd = 0
 h_collision = 0
 v_collision = 0
 h_direction = 0
-jumps = 1
+jumps = 2
 
 //Abilities
 global.grapple = 0
@@ -294,7 +294,7 @@ if (!lkey and !rkey) or (lkey and rkey)
 //Jumping
 if place_meeting(x,y+1, obj_Ground)
 {
-    jumps = 1
+    jumps = 2
 }
 if dashing = false
 {
@@ -495,7 +495,7 @@ if alarm[4] = 0
             grav = 0
             dashing = true
         }
-        alarm[2] = 15
+        alarm[2] = 10
 
     }
 }
@@ -511,7 +511,7 @@ if alarm[4] = 0
             grav = 0
             dashing = true
         }
-        alarm[3] = 15
+        alarm[3] = 10
 
     }
 }
