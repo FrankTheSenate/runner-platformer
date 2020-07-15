@@ -6,34 +6,51 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_CubeBoi</sprite>
     <sprite>sprites\spr_light</sprite>
-    <sprite>sprites\spr_Ground</sprite>
-    <sprite>sprites\spr_Attack</sprite>
-    <sprite>sprites\spr_Enemy</sprite>
-    <sprite>sprites\spr_bullet</sprite>
-    <sprite>sprites\spr_grapplehead</sprite>
-    <sprite>sprites\spr_grapplesurface</sprite>
     <sprites name="Mouse Sprites">
       <sprite>sprites\spr_target_attack</sprite>
       <sprite>sprites\spr_target_grab</sprite>
       <sprite>sprites\spr_target_idle</sprite>
     </sprites>
-    <sprite>sprites\spr_AIenemy</sprite>
-    <sprite>sprites\spr_spike</sprite>
-    <sprite>sprites\spr_lightsource</sprite>
-    <sprite>sprites\spr_bigend</sprite>
-    <sprite>sprites\spr_enemybullet</sprite>
-    <sprite>sprites\spr_flyenemy</sprite>
+    <sprites name="Enemy Sprites">
+      <sprite>sprites\spr_flyenemy</sprite>
+      <sprite>sprites\spr_AIenemy</sprite>
+      <sprite>sprites\spr_Enemy</sprite>
+    </sprites>
+    <sprites name="Interactable Environment Sprites">
+      <sprite>sprites\spr_spike</sprite>
+      <sprite>sprites\spr_bigend</sprite>
+      <sprite>sprites\spr_Ground</sprite>
+      <sprite>sprites\spr_grapplesurface</sprite>
+      <sprite>sprites\spr_lightsource</sprite>
+    </sprites>
+    <sprites name="Boolets + Attacks">
+      <sprites name="Friendly">
+        <sprite>sprites\spr_Attack</sprite>
+        <sprite>sprites\spr_grapplehead</sprite>
+        <sprite>sprites\spr_bullet</sprite>
+      </sprites>
+      <sprites name="Unfriendly">
+        <sprite>sprites\spr_enemybullet</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="Character Sprites">
+      <sprite>sprites\spr_CubeBoi</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\spr_AIenemy_states.gml</script>
     <script>scripts\script1.gml</script>
     <script>scripts\scr_mouse_states.gml</script>
     <script>scripts\scr_lighting.gml</script>
-    <script>scripts\scr_flyenemy_states.gml</script>
+    <script>scripts\scr_approach.gml</script>
+    <scripts name="AI">
+      <scripts name="Enemies">
+        <script>scripts\spr_AIenemy_states.gml</script>
+        <script>scripts\scr_flyenemy_states.gml</script>
+      </scripts>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_CubeBoi</object>
