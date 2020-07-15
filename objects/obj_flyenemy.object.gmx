@@ -37,7 +37,7 @@ accel = 1;
 h_collision = 0;
 v_collision = 0;
 h_direction = 0;
-fly_speed = 6
+fly_speed = 0.15
 
 xcomponent = 0;
 ycomponent = 0;
@@ -65,6 +65,19 @@ move_lock = false;
           <argument>
             <kind>1</kind>
             <string>///Switch States
+if distance_to_object(obj_CubeBoi) &gt; 300 and !distance_to_object(obj_CubeBoi) &lt; 50
+{
+    state = fly_e_state.chase
+}
+else if state = fly_e_state.chase and distance_to_object(obj_CubeBoi) &lt;= 100
+{
+    state = fly_e_state.attacking
+}
+
+else
+{
+    state = fly_e_state.idle 
+}
 switch (state)
 {
     case fly_e_state.idle:
@@ -75,10 +88,7 @@ switch (state)
         ycomponent = 0
         motion_set(point_direction(x, y, x, y), 0)
         
-        if (distance_to_object(obj_CubeBoi) &gt; 256 and distance_to_object(obj_CubeBoi) &lt; 1024 and obj_flyenemy.y &gt; obj_CubeBoi.y-50) or (distance_to_object(obj_CubeBoi) &lt; 1024 and obj_flyenemy.y &gt; obj_CubeBoi.y-50)
-        {
-        state = fly_e_state.chase
-        }
+
     }
     break;
     
@@ -88,10 +98,14 @@ switch (state)
             xcomponent = lengthdir_x(fly_speed, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
             ycomponent = lengthdir_y(fly_speed, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
             motion_set(point_direction(x, y, x, y), 0)
-            if distance_to_object(obj_CubeBoi) &lt; 1024
-            {
-            state = fly_e_state.idle 
-            }
+    }
+    
+    case fly_e_state.attacking:
+    {
+        if irandom(50) = 1
+        {
+            instance_create(x,y,obj_enemy_bullet)
+        }
     }
     break;
 }
@@ -141,13 +155,12 @@ if place_meeting(x,y+vspd,obj_Ground)
         vspd = 0
 }
 
-if irandom(150) = 9
-{
-    instance_create(x,y,obj_enemy_bullet)
-}
 
 x += hspd
 y += vspd
+
+xcomponent = 0
+vcomponent = 0
 </string>
           </argument>
         </arguments>
