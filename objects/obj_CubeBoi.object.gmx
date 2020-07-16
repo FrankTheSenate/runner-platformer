@@ -306,6 +306,12 @@ if dashing = false
     }
 }
 
+//No jumps after falling off platform
+if grounded = false and jumps > 1
+{
+    jumps = 1              
+{
+
 if vspd &lt; 0 and !jkey_held vspd += grav
 
 //Gravity
