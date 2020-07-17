@@ -472,6 +472,13 @@ if global.grapple = 0 and !instance_exists(obj_bullet)
     xcomponent = 0
     ycomponent = 0
 }
+else if place_meeting(x, y, obj_Ground)
+{
+    motion_set(point_direction(x, y, x, y), 0)
+    grav = 0.5
+    xcomponent = -xcomponent
+    ycomponent = -ycomponent
+}
 
 //Slow Down Time Toggle
 if keyboard_check_pressed(ord("Q"))
