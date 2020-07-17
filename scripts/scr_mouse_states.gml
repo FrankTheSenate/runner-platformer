@@ -4,4 +4,3 @@ enum mouse_state
     grab,
     attack
 }
-

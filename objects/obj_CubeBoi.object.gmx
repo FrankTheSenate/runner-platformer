@@ -307,10 +307,10 @@ if dashing = false
 }
 
 //No jumps after falling off platform
-if grounded = false and jumps > 1
+if grounded = false and jumps &gt; 1
 {
     jumps = 1              
-{
+}
 
 if vspd &lt; 0 and !jkey_held vspd += grav
 
@@ -432,6 +432,10 @@ instance_create(obj_CubeBoi.x, obj_CubeBoi.y, obj_Attack)
 //ShotGun
 if mouse_check_button_pressed(mb_right) and canshoot = true
 {
+    obj_CubeBoi.xcomponent = 0
+    obj_CubeBoi.ycomponent = 0
+    obj_CubeBoi.vspd = 0
+    obj_CubeBoi.hspd = 0
     var i
     for (i = 0; i &lt;= shotgun_pellet_amount; i += 1)
     {
