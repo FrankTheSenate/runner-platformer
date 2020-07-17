@@ -273,16 +273,29 @@ if (lkey) and place_meeting(x + 10, y, obj_Ground) and grounded = false
         vspd = 0
     }
 }
+else if jkey and place_meeting(x + 10, y, obj_Ground) and grounded = false
+    if lkey and !rkey
+    {
+        jumps = 1
+        vspd = 0
+    }
 //Right Walljump
 if (rkey) and place_meeting(x - 10, y, obj_Ground) and grounded = false
 {
     if jkey and !lkey
     {
-        jumps = 1
+        jumps = 2
         vspd = 0
     }
 }
-
+else if jkey and place_meeting(x - 10, y, obj_Ground) and grounded = false
+{
+    if rkey and !lkey
+    {
+        jumps = 2
+        vspd = 0
+    }
+}
 //No Movement (slowing down)
 if (!lkey and !rkey) or (lkey and rkey)
 {
@@ -433,9 +446,11 @@ instance_create(obj_CubeBoi.x, obj_CubeBoi.y, obj_Attack)
 if mouse_check_button_pressed(mb_right) and canshoot = true
 {
     obj_CubeBoi.xcomponent = 0
-    obj_CubeBoi.ycomponent = 0
-    obj_CubeBoi.vspd = 0
     obj_CubeBoi.hspd = 0
+    if vspd &gt; 0
+    {
+        vspd = 0
+    }
     var i
     for (i = 0; i &lt;= shotgun_pellet_amount; i += 1)
     {
