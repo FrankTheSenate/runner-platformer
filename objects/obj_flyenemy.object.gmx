@@ -65,31 +65,37 @@ move_lock = false;
           <argument>
             <kind>1</kind>
             <string>///Switch States
-if distance_to_object(obj_CubeBoi) &gt; 300 and !distance_to_object(obj_CubeBoi) &lt; 50
+if distance_to_object(obj_CubeBoi) &gt; 400 and distance_to_object(obj_CubeBoi) &lt; 1024
 {
     state = fly_e_state.chase
 }
-else if state = fly_e_state.chase and distance_to_object(obj_CubeBoi) &lt;= 100
+
+else if distance_to_object(obj_CubeBoi) &gt; 2048
+{
+    state = fly_e_state.idle
+
+}
+else if irandom(1000) &gt; 20
+{
+    state = fly_e_state.buzzing
+    
+}
+else
 {
     state = fly_e_state.attacking
 }
 
-else
-{
-    state = fly_e_state.idle 
-}
+
+
 switch (state)
 {
     case fly_e_state.idle:
     {
-        motion_set(point_direction(x, y, obj_CubeBoi.x + random_range(-150,150), obj_CubeBoi.y - 100), fly_speed)
-        xcomponent = lengthdir_x(fly_speed, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
-        ycomponent = lengthdir_y(fly_speed, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
         motion_set(point_direction(x, y, x, y), 0)
         hspd = 0;
         vspd = 0;
-        
-
+        xcomponent = 0
+        ycomponent = 0
     }
     break;
     
@@ -101,11 +107,27 @@ switch (state)
             motion_set(point_direction(x, y, x, y), 0)
     }
     
+    break;
+    
     case fly_e_state.attacking:
     {
-        if irandom(50) = 1
+        motion_set(point_direction(x, y, x, y), 0)
+        xcomponent = 0
+        ycomponent = 0
+        vspd = 0
+        hspd = 0
+        instance_create(x,y,obj_enemy_bullet)
+    }
+    break;
+    
+    case fly_e_state.buzzing:
+    {
+        if distance_to_object(obj_flyenemy) &gt; 200
         {
-            instance_create(x,y,obj_enemy_bullet)
+        motion_set(point_direction(x, y, obj_CubeBoi.x + random_range(-50,50), obj_CubeBoi.y - 200) , fly_speed)
+        xcomponent = lengthdir_x(fly_speed, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
+        ycomponent = lengthdir_y(fly_speed, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
+        motion_set(point_direction(x, y, x, y), 0)
         }
     }
     break;

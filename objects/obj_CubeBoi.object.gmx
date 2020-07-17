@@ -479,7 +479,7 @@ if instance_exists(obj_grapplehead)
 
         }
     }
-    
+//Turn off grapple
 if global.grapple = 0 and !instance_exists(obj_bullet)
 {
     motion_set(point_direction(x, y, x, y), 0)
@@ -487,6 +487,7 @@ if global.grapple = 0 and !instance_exists(obj_bullet)
     xcomponent = 0
     ycomponent = 0
 }
+//Check if player is grappling and hitting wall
 else if place_meeting(x+xcomponent, y+ycomponent, obj_Ground)
 {
     motion_set(point_direction(x, y, x, y), 0)
