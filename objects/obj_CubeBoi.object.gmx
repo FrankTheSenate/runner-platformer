@@ -54,6 +54,7 @@ alarm[3] = 0
 alarm[2] = 0
 shotgun_pellet_amount = 5
 canshoot = true
+
 </string>
           </argument>
         </arguments>
@@ -192,7 +193,6 @@ jkey = keyboard_check_pressed(vk_space)
 jkey_held = keyboard_check(vk_space)
 dkey = keyboard_check(ord('S'))
 
-
 //Movement Left
 if lkey
 {
@@ -238,13 +238,13 @@ else
 //Left Walljump
 if jkey and place_meeting(x + 10, y, obj_Ground) and grounded = false
 {
-    hspd = -10
+    hspd = -15
     jumps = 1
 }
 //Right Walljump
 if jkey and place_meeting(x - 10, y, obj_Ground) and grounded = false
 {
-    hspd = 10
+    hspd = 15
     jumps = 1
 }
 //No Movement (slowing down)
@@ -362,6 +362,15 @@ x += hspd
 y += vspd
 
 
+
+if hspd &lt;= 0 
+{
+    view_hborder = 300
+}
+else if obj_CubeBoi.x &gt; view_xview + 640
+{
+    view_hborder = 640  
+}
 //Reset components
 xcomponent = 0
 ycomponent = 0

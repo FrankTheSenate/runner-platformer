@@ -21,6 +21,7 @@
       <sprite>sprites\spr_spike</sprite>
       <sprite>sprites\spr_bigend</sprite>
       <sprite>sprites\spr_Ground</sprite>
+      <sprite>sprites\spr_kill</sprite>
       <sprite>sprites\spr_grapplesurface</sprite>
       <sprite>sprites\spr_lightsource</sprite>
     </sprites>
@@ -71,6 +72,7 @@
     <object>objects\obj_enemy_bullet</object>
     <object>objects\obj_endroom</object>
     <object>objects\obj_controls</object>
+    <object>objects\obj_killbox</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_controls</room>
