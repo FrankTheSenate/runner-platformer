@@ -362,7 +362,7 @@ x += hspd
 y += vspd
 
 
-
+//Dynamic view borders
 if hspd &lt;= 0 
 {
     view_hborder = 300

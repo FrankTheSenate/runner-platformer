@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Antialiasing + Vsync
+            <string>///This thing needs to be placed in the earliest possible room
+
+//Antialiasing + Vsync
 display_reset(8, true)
 window_set_cursor(cr_none)
 instance_create(x,y,obj_cursor)
@@ -59,9 +61,19 @@ randomize()
           <argument>
             <kind>1</kind>
             <string>//Check if there are any enemies left
+if instance_exists(obj_CubeBoi)
+{
+
 if obj_CubeBoi.time = 0
 {
     room_speed = 60
+}
+
+
+
+
+
+
 }
 </string>
           </argument>
