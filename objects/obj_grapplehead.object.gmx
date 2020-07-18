@@ -52,7 +52,10 @@ collisions = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Stop on contact
+            <string>xcomponent = + lengthdir_x(30, point_direction(x, y, obj_grapplesurface.x, obj_grapplesurface.y))
+ycomponent = + lengthdir_y(30, point_direction(x, y, obj_grapplesurface.x, obj_grapplesurface.y))
+
+//Stop on contact
 if place_meeting(x,y,obj_grapplesurface)
 {
     vspeed = 0
