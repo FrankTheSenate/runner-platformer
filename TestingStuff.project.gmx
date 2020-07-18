@@ -37,6 +37,7 @@
     <sprites name="Character Sprites">
       <sprite>sprites\spr_CubeBoi</sprite>
     </sprites>
+    <sprite>sprites\spr_controls</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -51,6 +52,7 @@
         <script>scripts\scr_flyenemy_states.gml</script>
       </scripts>
     </scripts>
+    <script>scripts\scr_controlsscreen.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_CubeBoi</object>
@@ -68,10 +70,13 @@
     <object>objects\obj_flyenemy</object>
     <object>objects\obj_enemy_bullet</object>
     <object>objects\obj_endroom</object>
+    <object>objects\obj_controls</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_controls</room>
     <room>rooms\room0</room>
     <room>rooms\room2</room>
+    <room>rooms\rm_battletest</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

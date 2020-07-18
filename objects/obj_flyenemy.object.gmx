@@ -75,7 +75,7 @@ else if distance_to_object(obj_CubeBoi) &gt; 2048
     state = fly_e_state.idle
 
 }
-else if irandom(1000) &gt; 20
+else if irandom(1000) &gt; 10
 {
     state = fly_e_state.buzzing
     

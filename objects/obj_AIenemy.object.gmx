@@ -153,11 +153,12 @@ if (place_meeting(x,y,obj_CubeBoi))
     {
         with (obj_CubeBoi) vspd = -jspd;   //Bounce off of enemy
         instance_destroy();
+        obj_CubeBoi.jumps = 1
     }
     
     else
     {
-        game_restart();
+        room_restart();
     }
 }
 
