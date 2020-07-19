@@ -30,6 +30,7 @@
         <sprite>sprites\spr_Attack</sprite>
         <sprite>sprites\spr_grapplehead</sprite>
         <sprite>sprites\spr_bullet</sprite>
+        <sprite>sprites\spr_longswing_test</sprite>
       </sprites>
       <sprites name="Unfriendly">
         <sprite>sprites\spr_enemybullet</sprite>
