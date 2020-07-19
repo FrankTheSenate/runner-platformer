@@ -78,7 +78,6 @@
     <object>objects\obj_endroom</object>
     <object>objects\obj_controls</object>
     <object>objects\obj_killbox</object>
-    <object>objects\obj_debug</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_controls</room>
