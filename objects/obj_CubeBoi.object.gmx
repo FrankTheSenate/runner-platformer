@@ -29,8 +29,8 @@
 //Physics
 acceleration = 0.4
 deceleration = 2
-grav = 0.5
-jspd = 15
+grav = 0.25
+jspd = 10
 maxhvelocity = 18
 maxvvelocity = 20
 hspd = 0
@@ -42,7 +42,7 @@ jumps = 2
 
 //Abilities
 global.grapple = 0
-grapple_speed = 15
+grapple_speed = 12
 xcomponent = 0
 ycomponent = 0
 move_lock = false
@@ -104,7 +104,7 @@ canshoot = true
 {
     hspd += 30
 }
-grav = 0.5
+grav = 0.25
 dashing = false
 </string>
           </argument>
@@ -132,7 +132,7 @@ dashing = false
 {
     hspd -= 30
 }
-grav = 0.5
+grav = 0.25
 dashing = false
 
 </string>
@@ -286,7 +286,7 @@ vspd = 0
 }
 else
 {
-grav = 0.5
+grav = 0.25
 }
 vspd += grav
 
@@ -403,10 +403,13 @@ if mouse_check_button_pressed(mb_left)
 instance_create(obj_CubeBoi.x, obj_CubeBoi.y, obj_Attack)
 }
 //ShotGun
-if mouse_check_button_pressed(mb_right) and canshoot = true
+if mouse_check_button_pressed(mb_right) and canshoot = true and !place_meeting(x,y,obj_cursor)
 {
-    obj_CubeBoi.xcomponent = 0
-    obj_CubeBoi.hspd = 0
+    if grounded = false
+    {
+        obj_CubeBoi.xcomponent = 0
+        obj_CubeBoi.hspd = 0
+    }
     if vspd &gt; 0
     {
         vspd = 0
@@ -443,7 +446,7 @@ if instance_exists(obj_grapplehead)
 if global.grapple = 0 and !instance_exists(obj_bullet)
 {
     motion_set(point_direction(x, y, x, y), 0)
-    grav = 0.5
+    grav = 0.25
     xcomponent = 0
     ycomponent = 0
 }
@@ -451,7 +454,7 @@ if global.grapple = 0 and !instance_exists(obj_bullet)
 else if place_meeting(x+xcomponent, y+ycomponent, obj_Ground)
 {
     motion_set(point_direction(x, y, x, y), 0)
-    grav = 0.5
+    grav = 0.25
     global.grapple = 0
     with( obj_grapplehead ) 
 {

@@ -78,6 +78,7 @@
     <room>rooms\rm_controls</room>
     <room>rooms\room0</room>
     <room>rooms\room2</room>
+    <room>rooms\rm_tallroom</room>
     <room>rooms\rm_battletest</room>
   </rooms>
   <help>
