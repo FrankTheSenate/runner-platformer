@@ -54,7 +54,11 @@
       </scripts>
     </scripts>
     <script>scripts\scr_controlsscreen.gml</script>
+    <script>scripts\scr_debug_screen.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\font0</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_CubeBoi</object>
     <object>objects\obj_Ground</object>
@@ -73,6 +77,7 @@
     <object>objects\obj_endroom</object>
     <object>objects\obj_controls</object>
     <object>objects\obj_killbox</object>
+    <object>objects\obj_debug</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_controls</room>

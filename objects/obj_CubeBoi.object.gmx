@@ -55,6 +55,10 @@ alarm[2] = 0
 shotgun_pellet_amount = 5
 canshoot = true
 
+/*
+//Debug
+scr_debug_screen()
+*/
 </string>
           </argument>
         </arguments>
