@@ -199,6 +199,7 @@ if lkey
     if sign(hspd) &lt;= 0
     {
         hspd -= acceleration
+        image_xscale=-1 //flip sprite
     }
     else
     {
@@ -212,6 +213,7 @@ if rkey
     if sign(hspd) &gt;= 0
     {
         hspd += acceleration
+        image_xscale=1 //flip sprite
     }
     else
     {

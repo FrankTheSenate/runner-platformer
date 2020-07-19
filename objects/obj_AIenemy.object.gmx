@@ -81,6 +81,19 @@ switch (state)
     {
         dir = sign(obj_CubeBoi.x - x);
         hspd = dir * accel;
+        
+        //Checks direction and flips sprite direction
+        if sign(hspd) &lt;= 0 //check if moving left
+        {
+            image_xscale=1
+        }
+        else if sign(hspd) &gt;=0 //check if moving right
+        {
+          image_xscale=-1   
+        }
+        
+        
+        
         vspd = (min(7,vspd+0.05));
         if (distance_to_object(obj_CubeBoi) &gt; 164) state = e_state.idle;
     }
