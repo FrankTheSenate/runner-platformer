@@ -38,6 +38,9 @@ depth = -999999
 randomize()
 
 
+//Debug Toggle. change debug stuff in scr_debug_screen
+toggle = 0
+
 </string>
           </argument>
         </arguments>
