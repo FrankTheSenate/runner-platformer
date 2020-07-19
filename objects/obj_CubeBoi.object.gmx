@@ -55,6 +55,10 @@ alarm[2] = 0
 shotgun_pellet_amount = 5
 canshoot = true
 
+/*
+//Debug
+scr_debug_screen()
+*/
 </string>
           </argument>
         </arguments>
@@ -172,6 +176,7 @@ if lkey
     if sign(hspd) &lt;= 0
     {
         hspd -= acceleration
+        image_xscale=-1 //flip sprite
     }
     else
     {
@@ -185,6 +190,7 @@ if rkey
     if sign(hspd) &gt;= 0
     {
         hspd += acceleration
+        image_xscale=1 //flip sprite
     }
     else
     {
