@@ -87,6 +87,35 @@ scr_debug_screen()
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if abs(vspd) &gt;= 30
+{
+    vspd -= 30
+}
+grav = 0.25
+dashing = false
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
@@ -258,9 +287,11 @@ if grounded = false and jumps &gt; 1
 if vspd &lt; 0 and !jkey_held vspd += grav
 
 //Gravity
+
 if dashing = true
 {
 grav = 0
+if !abs(vspd) = 30
 vspd = 0
 }
 else
@@ -328,14 +359,6 @@ if dashing = false
         }
 }
 
-//Vertical Speed Limit (Doesn't currently work, but it will later)
-if abs(vspd) &gt; maxvvelocity
-{
-        if vspd &lt; -maxvvelocity and vspd &lt; 0
-        {
-            vspd += 1
-        }
-}
 
 x += hspd
 y += vspd
@@ -460,18 +483,31 @@ if keyboard_check_pressed(ord("Q"))
 }
 
 //Dashing
+//Horizontal dashing
 if !abs(hspd) = 0 and alarm[4] = 0
 {
-    if dashkey
+    if (dashkey and rkey) or (dashkey and lkey)
     {
         hspd = 30 * sign(hspd)
         alarm[4] = 60
         grav = 0
+        vspd = 0
         dashing = true
     }
     alarm[2] = 10
 }
-
+//Downward Dashing
+if alarm[4] = 0
+{
+    if dashkey and dkey
+    {
+        vspd = 30
+        alarm[4] = 60
+        dashing = true
+    }
+    alarm[3] = 7
+        
+}
 if alarm [4] &gt;0
 {
     alarm [4] -= 1
