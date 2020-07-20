@@ -16,6 +16,7 @@
       <sprite>sprites\spr_flyenemy</sprite>
       <sprite>sprites\spr_AIenemy</sprite>
       <sprite>sprites\spr_Enemy</sprite>
+      <sprite>sprites\spr_missile_launcher</sprite>
     </sprites>
     <sprites name="Interactable Environment Sprites">
       <sprite>sprites\spr_spike</sprite>
@@ -24,6 +25,7 @@
       <sprite>sprites\spr_kill</sprite>
       <sprite>sprites\spr_grapplesurface</sprite>
       <sprite>sprites\spr_lightsource</sprite>
+      <sprite>sprites\spr_slope</sprite>
     </sprites>
     <sprites name="Boolets + Attacks">
       <sprites name="Friendly">
@@ -36,6 +38,8 @@
       </sprites>
       <sprites name="Unfriendly">
         <sprite>sprites\spr_enemybullet</sprite>
+        <sprite>sprites\spr_missile</sprite>
+        <sprite>sprites\spr_explosion</sprite>
       </sprites>
     </sprites>
     <sprites name="Character Sprites">
@@ -81,6 +85,8 @@
     <object>objects\obj_controls</object>
     <object>objects\obj_killbox</object>
     <object>objects\obj_missile_launcher</object>
+    <object>objects\obj_missile</object>
+    <object>objects\obj_explosion</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_controls</room>
