@@ -191,6 +191,7 @@
     <instance objName="obj_grapplesurface" x="144" y="1440" name="inst_9A0ACFB0" locked="0" code="" scaleX="0.5" scaleY="2.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_Ground" x="128" y="2400" name="inst_D009E5BE" locked="0" code="" scaleX="14" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_endroom" x="1008" y="2368" name="inst_30F12B44" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_missile_launcher" x="1216" y="1344" name="inst_96D44053" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
