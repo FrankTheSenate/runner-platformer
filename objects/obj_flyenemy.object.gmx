@@ -65,17 +65,17 @@ move_lock = false;
           <argument>
             <kind>1</kind>
             <string>///Switch States
-if distance_to_object(obj_CubeBoi) &gt; 400 and distance_to_object(obj_CubeBoi) &lt; 1024
+if distance_to_object(obj_CubeBoi) &gt; 400 and distance_to_object(obj_CubeBoi) &lt; 1024 and !collision_line( x, y, obj_CubeBoi.x, obj_CubeBoi.y, obj_Ground, false, true)
 {
     state = fly_e_state.chase
 }
 
-else if distance_to_object(obj_CubeBoi) &gt; 2048
+else if distance_to_object(obj_CubeBoi) &gt; 2048 or collision_line( x, y, obj_CubeBoi.x, obj_CubeBoi.y, obj_Ground, false, true)
 {
     state = fly_e_state.idle
 
 }
-else if irandom(1000) &gt; 10
+else if irandom(1000) &gt; 10 and !collision_line( x, y, obj_CubeBoi.x, obj_CubeBoi.y, obj_Ground, false, true)
 {
     state = fly_e_state.buzzing
     
