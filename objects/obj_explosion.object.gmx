@@ -26,6 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>alarm[0] = 5
+hspeed = obj_missile.xcomponent * 2
+vspeed = obj_missile.ycomponent * 2
+
+with obj_missile
+{
+    instance_destroy()
+}
 </string>
           </argument>
         </arguments>
