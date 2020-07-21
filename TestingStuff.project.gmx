@@ -47,7 +47,9 @@
     </sprites>
     <sprite>sprites\spr_controls</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_tiles</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\script1.gml</script>
