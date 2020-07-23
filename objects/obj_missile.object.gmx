@@ -25,9 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 10
-xcomponent = lengthdir_x(5, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
-ycomponent = lengthdir_y(5, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
+            <string>alarm[0] = 30
+acceleration = 0.10
+
+xcomponent = lengthdir_x(acceleration, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
+ycomponent = lengthdir_y(acceleration, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
+
 </string>
           </argument>
         </arguments>
@@ -52,7 +55,7 @@ ycomponent = lengthdir_y(5, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
             <kind>1</kind>
             <string>xcomponent =  lengthdir_x(5, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
 ycomponent = lengthdir_y(5, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
-alarm[0] = 10
+alarm[0] = 30
 </string>
           </argument>
         </arguments>
@@ -77,6 +80,8 @@ alarm[0] = 10
             <kind>1</kind>
             <string>image_angle = point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y)
 image_xscale = -1
+xcomponent +=  lengthdir_x(acceleration, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
+ycomponent += lengthdir_y(acceleration, point_direction(x, y, obj_CubeBoi.x, obj_CubeBoi.y))
 x+= xcomponent
 y+= ycomponent
 
