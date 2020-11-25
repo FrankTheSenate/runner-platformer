@@ -275,6 +275,11 @@ if dashing = false
         vspd = 0
         vspd -= jspd
         jumps -=1
+        if grounded = true
+        {
+            instance_create(x,y,obj_JumpPuff)
+            audio_play_sound(snd_Jump,1,false)
+        }
     }
 }
 

@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_Jump</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_light</sprite>
     <sprites name="Mouse Sprites">
@@ -44,6 +46,7 @@
     </sprites>
     <sprites name="Character Sprites">
       <sprite>sprites\spr_CubeBoi</sprite>
+      <sprite>sprites\spr_JumpPuff</sprite>
     </sprites>
     <sprite>sprites\spr_controls</sprite>
   </sprites>
@@ -89,6 +92,7 @@
     <object>objects\obj_missile_launcher</object>
     <object>objects\obj_missile</object>
     <object>objects\obj_explosion</object>
+    <object>objects\obj_JumpPuff</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_controls</room>
